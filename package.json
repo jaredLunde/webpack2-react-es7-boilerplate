@@ -1,6 +1,6 @@
 {
   "name": "webpack2-react-es7-boilerplate",
-  "version": "0.0.5-alpha",
+  "version": "0.0.9-alpha",
   "main": "index.js",
   "private": false,
   "dependencies": {
@@ -20,7 +20,6 @@
     "cross-env": "^2.0.0",
     "deasync": "^0.1.7",
     "jsdom": "^9.4.2",
-    "modernizr-webpack-plugin": "^1.0.5",
     "public-ip": "^2.0.1",
     "react-addons-perf": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",

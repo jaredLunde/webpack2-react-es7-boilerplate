@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-var ModernizrPlugin = require('modernizr-webpack-plugin')
 var deasync = require('deasync')
 var publicIp = require('public-ip')
 var Dashboard = require('webpack-dashboard')
@@ -9,30 +8,7 @@ var DashboardPlugin = require('webpack-dashboard/plugin')
 
 
 var dashboard = new Dashboard()
-
-
-var modernizrConfig = {
-  "filename": "modernizr.js",
-  'options': [
-    'setClasses',
-    'html5printshiv'
-  ],
-  'feature-detects': [
-    "inputtypes",
-    "network/connection",
-    "touchevents"
-  ],
-  "minify" : {
-    "output": {
-      "comments": false,
-      "beautify": false,
-      "screw_ie8": true
-    }
-  }
-}
-
-
-var getIp = deasync(function (cb) {publicIp.v4().then(ip => cb(null, ip)})
+var getIp = deasync(function (cb) {publicIp.v4().then(ip => cb(null, ip))})
 
 
 module.exports = {
@@ -98,7 +74,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({names: ["client", "vendor"],
                                              filename: "vendor.dev.js"}),
     new DashboardPlugin(dashboard.setData),
-    new ModernizrPlugin(modernizrConfig),
     /* new ExtractTextPlugin('{{PKG_NAME}}.dev.css') */
   ],
 

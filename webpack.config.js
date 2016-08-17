@@ -1,28 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var ModernizrPlugin = require('modernizr-webpack-plugin');
 // var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-
-var modernizrConfig = {
-  "filename": "modernizr.js",
-  'options': [
-    'setClasses',
-    'html5printshiv'
-  ],
-  'feature-detects': [
-    "inputtypes",
-    "network/connection",
-    "touchevents"
-  ],
-  "minify" : {
-    "output": {
-      "comments": false,
-      "beautify": false,
-      "screw_ie8": true
-    }
-  }
-}
 
 
 var stripLogger = 'strip-loader?strip[]=console.error' +
@@ -80,7 +58,6 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"production"'}}),
-    new ModernizrPlugin(modernizrConfig),
     new webpack.optimize.CommonsChunkPlugin({name: "vendor",
                                              filename: "vendor.js"}),
     new webpack.optimize.UglifyJsPlugin({
