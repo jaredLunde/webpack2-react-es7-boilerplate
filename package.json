@@ -1,6 +1,6 @@
 {
   "name": "webpack2-react-es7-boilerplate",
-  "version": "0.0.11-alpha",
+  "version": "0.0.12-alpha",
   "main": "index.js",
   "private": false,
   "dependencies": {
