@@ -72,7 +72,6 @@ module.exports = {
         comments: false
       }
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
