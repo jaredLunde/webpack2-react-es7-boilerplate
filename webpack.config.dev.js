@@ -33,8 +33,6 @@ module.exports = {
     pathinfo: true
   },
 
-  debug: true,
-
   // Where to resolve our loaders
   resolveLoader: {
     modules: [path.join(__dirname, 'node_modules')],
