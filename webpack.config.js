@@ -39,7 +39,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       /*
       {
         test: /\.scss$/,
