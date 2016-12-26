@@ -25,10 +25,10 @@
     "react-addons-test-utils": "^15.3.0",
     "react-hot-loader": "^3.0.0-beta.2",
     "strip-loader": "^0.1.2",
-    "webpack": "^2.2.0-rc.0",
+    "webpack": "^2.2.0-rc.2",
     "webpack-dashboard": "0.2.0",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-dev-server": "^2.1.0-beta.12",
+    "webpack-dev-server": "^2.2.0-rc.0",
     "webpack-hot-middleware": "^2.12.2"
   },
   "repository": {
