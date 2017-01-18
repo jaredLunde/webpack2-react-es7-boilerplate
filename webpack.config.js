@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 var stripLogger = 'strip-loader?strip[]=console.error' +
@@ -35,23 +34,14 @@ module.exports = {
     descriptionFiles: ["package.json"],
     moduleExtensions: ["-loader"],
     // Extensions used to resolve modules
-    extensions: ['.js', '.react.js', '.scss', '.css']
+    extensions: ['.js', '.react.js']
   },
 
   module: {
     rules: [
-      /*
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css?minifier!group-css-media-queries!sass'
-        })
-      },
-      */
       {
         test: /\.js$/,
-        loaders: ['babel', stripLogger],
+        use: ['babel', stripLogger],
         exclude: [/node_modules/]
       },
     ],
@@ -76,7 +66,6 @@ module.exports = {
       minimize: true,
       debug: false
     }),
-    /* new ExtractTextPlugin('{{PKG_NAME}}.css') */
   ],
 
   // Include mocks for when node.js specific modules may be required

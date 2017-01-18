@@ -2,10 +2,9 @@ var path = require('path')
 var webpack = require('webpack')
 var Dashboard = require('webpack-dashboard')
 var DashboardPlugin = require('webpack-dashboard/plugin')
-// var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
 
 var dashboard = new Dashboard()
+
 
 module.exports = {
   // The base directory for resolving the entry option
@@ -40,20 +39,11 @@ module.exports = {
     descriptionFiles: ["package.json"],
     moduleExtensions: ["-loader"],
     // Extensions used to resolve modules
-    extensions: ['.js', '.react.js', '.scss', '.css']
+    extensions: ['.js', '.react.js']
   },
 
   module: {
     rules: [
-      /*
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css!group-css-media-queries!sass'
-        })
-      },
-      */
       {
         test: /\.js$/,
         loader: 'babel',
@@ -69,7 +59,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({names: ["client", "vendor"],
                                              filename: "vendor.dev.js"}),
     new DashboardPlugin(dashboard.setData),
-    /* new ExtractTextPlugin('{{PKG_NAME}}.dev.css') */
   ],
 
   // Include mocks for when node.js specific modules may be required
