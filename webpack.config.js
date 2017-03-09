@@ -19,20 +19,20 @@ module.exports = {
   // Various output options, to give us a single bundle.js file with everything resolved and concatenated
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: "{{PKG_NAME}}.js",
+    filename: '{{PKG_NAME}}.js',
     pathinfo: true
   },
 
   // Where to resolve our loaders
   resolveLoader: {
     modules: [path.join(__dirname, 'node_modules')],
-    moduleExtensions: ["-loader"],
+    moduleExtensions: ['-loader'],
   },
   resolve: {
     // Directories that contain our modules
-    modules: [path.resolve(__dirname, "lib"), "node_modules"],
-    descriptionFiles: ["package.json"],
-    moduleExtensions: ["-loader"],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    descriptionFiles: ['package.json'],
+    moduleExtensions: ['-loader'],
     // Extensions used to resolve modules
     extensions: ['.js', '.react.js']
   },
@@ -49,8 +49,8 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"production"'}}),
-    new webpack.optimize.CommonsChunkPlugin({name: "vendor",
-                                             filename: "vendor.js"}),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor',
+                                             filename: 'vendor.js'}),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         pure_getters: true,
